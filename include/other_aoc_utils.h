@@ -1,20 +1,9 @@
 #ifndef OTHER_AOC_UTILS_H
 #define OTHER_AOC_UTILS_H
 
-typedef std::vector<int> ints_t;
+#include <aoc_typedefs.h>
 
-ints_t matlab_colon(int first, int last)
-{
-    int incr = first < last ? 1 : -1;
-    ints_t vector;
-    for (int ii = first; ; ii += incr)
-    {
-        vector.push_back(ii);
-        if ( ii == last)
-            break;
-    }
-    return vector;
-}
+ints_t matlab_colon(int first, int last);
 
 template <typename T>
 void results(T test_result, T expected_test_result, T real_result)

@@ -1,20 +1,9 @@
-#include <iostream> //std::cout
-#include <fstream>  // std::ifstream
-#include <string>
-#include <sstream>
-#include <vector>
-#include <array>
-
-#include <string_parser.h>
-#include <other_aoc_utils.h>
-
-typedef std::vector<int> ints_t;
-
+#include <advent_of_code.h>
 
 int main ()
 {
-    std::ifstream input_test ("../inputs/dayN_test.txt");
-    std::ifstream input_real ("../inputs/dayN.txt");
+    strings_t test_data = get_strings_from_file("../inputs/dayN_test.txt");
+    strings_t real_data = get_strings_from_file("../inputs/dayN.txt");
 
 
     int results_test_1 = 0;
