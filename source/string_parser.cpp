@@ -7,7 +7,7 @@
 strings_t get_strings_from_file(const std::string& file_path)
 {
     strings_t strings;
-    std::ifstream file_stream ("../inputs/day3_test.txt");
+    std::ifstream file_stream (file_path);
     std::string line;
     while (std::getline(file_stream, line))
         strings.push_back(line);
