@@ -12,4 +12,6 @@ std::string string_after_space(std::string string_in, size_t space_index);
 ints_t    substrings_to_ints(std::string string, std::string delimeter);
 strings_t substrings_to_strings(std::string string, std::string delimeter);
 
+bool compare_sorted_strings(std::string str1, std::string str2);
+
 #endif // STRING_PARSER_H

@@ -2,7 +2,7 @@
 
 #include <sstream>
 #include <fstream>  // std::ifstream
-
+#include <algorithm> // sort
 
 strings_t get_strings_from_file(const std::string& file_path)
 {
@@ -64,4 +64,11 @@ strings_t substrings_to_strings(std::string string, std::string delimeter)
         strings.push_back(substr);
     }
     return strings;
+}
+
+bool compare_sorted_strings(std::string str1, std::string str2)
+{
+    std::sort(str1.begin(), str1.end());
+    std::sort(str2.begin(), str2.end());
+    return str1 == str2;
 }

@@ -7,6 +7,7 @@
 #include <sstream>
 #include <vector>
 #include <array>
+#include <algorithm> //sort
 
 #include <aoc_typedefs.h>
 #include <other_aoc_utils.h>
