@@ -66,6 +66,21 @@ strings_t substrings_to_strings(std::string string, std::string delimeter)
     return strings;
 }
 
+ints_t_2d strings_of_digits_to_ints(strings_t input)
+{
+    ints_t_2d out;
+    for (auto number_string : input)
+    {
+        ints_t line;
+        for (auto digit : number_string)
+        {
+            line.push_back(digit - '0'); //Find distance from the char for zero.
+        }
+        out.push_back(line);
+    }
+    return out;
+}
+
 bool compare_sorted_strings(std::string str1, std::string str2)
 {
     std::sort(str1.begin(), str1.end());

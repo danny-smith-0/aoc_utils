@@ -2,8 +2,10 @@
 
 int main ()
 {
-    strings_t test_data = get_strings_from_file("../inputs/dayN_test.txt");
-    strings_t real_data = get_strings_from_file("../inputs/dayN.txt");
+    std::string day_string = "10";
+    strings_t test_data = get_strings_from_file("../inputs/day" + day_string + "_test.txt");
+    strings_t real_data = get_strings_from_file("../inputs/day" + day_string + ".txt");
+    std::cout << "Day " << day_string << std::endl;
 
 
     int results_test_1 = 0;
