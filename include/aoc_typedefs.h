@@ -4,6 +4,9 @@
 #include <string>
 #include <vector>
 
+typedef unsigned long long ull;
+typedef signed long long sll;
+
 typedef std::vector<int> ints_t;
 typedef std::vector<ints_t> ints_t_2d;
 typedef std::vector<bool> bools_t;
