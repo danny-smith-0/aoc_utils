@@ -34,15 +34,15 @@ void print_ints_t_2d(ints_t_2d output, bool with_comma = false)
 }
 
 template <typename T>
-void print_T_2d(T output, bool with_comma = false)
+void print_T_2d(T output, bool with_comma = false, bool null_is_space = false)
 {
     for (auto row : output)
     {
         for (auto val : row)
         {
-            std::cout << val;
-            if (with_comma)
-                std::cout << ",";
+            if (null_is_space && val == 0) { std::cout << " "; }
+            else                           { std::cout << val; }
+            if (with_comma) { std::cout << ","; }
         }
         std::cout << std::endl;
     }
