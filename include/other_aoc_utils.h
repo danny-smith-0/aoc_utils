@@ -33,4 +33,29 @@ void print_ints_t_2d(ints_t_2d output, bool with_comma = false)
     }
 }
 
+template <typename T>
+void print_T_2d(T output, bool with_comma = false)
+{
+    for (auto row : output)
+    {
+        for (auto val : row)
+        {
+            std::cout << val;
+            if (with_comma)
+                std::cout << ",";
+        }
+        std::cout << std::endl;
+    }
+}
+
+int count_bools_t_2d(bools_t_2d bools)
+{
+    int count = 0;
+    for (auto row: bools)
+        for (auto my_bool : row)
+            count += my_bool ? 1 : 0;
+
+    return count;
+}
+
 #endif // OTHER_AOC_UTILS_H
