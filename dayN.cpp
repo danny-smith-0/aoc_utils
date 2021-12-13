@@ -1,17 +1,18 @@
 #include <advent_of_code.h>
 
-// ints_t_2d parse()
-// {
-//     //
-// }
+ints_t_2d parse(strings_t input)
+{
+    ints_t_2d out;
+    return out;
+}
 
-sll part1(strings_t data)
+sll part1(strings_t input)
 {
     sll out = 0;
     return out;
 }
 
-sll part2(strings_t data)
+sll part2(strings_t input)
 {
     sll out = 0;
     return out;
@@ -30,7 +31,7 @@ int main ()
     sll expected_test_result_1 = 0;
 
     sll results_test_2 = part2(test_data);
-    sll results_real_2 = part2(test_data);
+    sll results_real_2 = part2(real_data);
     sll expected_test_result_2 = 0;
 
     results(results_test_1, expected_test_result_1, results_real_1);
