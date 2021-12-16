@@ -91,4 +91,14 @@ bools_t_2d coords_to_bools(coords_t_vec path, size_t max_dimension = 1001, size_
     return map;
 }
 
+size_t steps_between_cells(coords_t cell1, coords_t cell2)
+{
+    sll diff = cell1.first - cell2.first;
+    size_t first_steps  = static_cast<size_t>(std::abs(diff));
+    diff = cell1.second - cell2.second;
+    size_t second_steps = static_cast<size_t>(std::abs(diff));
+    size_t out = first_steps + second_steps;
+    return out;
+}
+
 #endif // OTHER_AOC_UTILS_H
