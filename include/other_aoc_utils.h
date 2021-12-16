@@ -3,6 +3,7 @@
 
 #include <aoc_typedefs.h>
 #include <iostream>
+#include <algorithm>
 
 ints_t matlab_colon(int first, int last);
 
@@ -36,16 +37,24 @@ void print_ints_t_2d(ints_t_2d output, bool with_comma = false)
 template <typename T>
 void print_T_2d(T output, bool with_comma = false, bool null_is_space = false)
 {
+    std::cout << print_T_2d_to_string(output, with_comma, null_is_space);
+}
+
+template <typename T>
+std::string print_T_2d_to_string(T output, bool with_comma = false, bool null_is_space = false)
+{
+    std::stringstream ss;
     for (auto row : output)
     {
         for (auto val : row)
         {
-            if (null_is_space && val == 0) { std::cout << " "; }
-            else                           { std::cout << val; }
-            if (with_comma) { std::cout << ","; }
+            if (null_is_space && val == 0) { ss << " "; }
+            else                           { ss << val; }
+            if (with_comma) { ss << ","; }
         }
-        std::cout << std::endl;
+        ss << std::endl;
     }
+    return ss.str();
 }
 
 int count_bools_t_2d(bools_t_2d bools)
@@ -56,6 +65,30 @@ int count_bools_t_2d(bools_t_2d bools)
             count += my_bool ? 1 : 0;
 
     return count;
+}
+
+bools_t_2d coords_to_bools(coords_t_vec path, size_t max_dimension = 1001, size_t min_dimension_display = 0)
+{
+    // min_dimension_display = min_dimension_display == 0 ? max_dimension :
+    bools_t_2d map (max_dimension, bools_t(max_dimension, false));
+    size_t my_max_idx = 0;
+    for (auto coords : path)
+    {
+        my_max_idx = std::max(my_max_idx, std::max(coords.first, coords.second));
+        if(my_max_idx + 1 > max_dimension)
+        {
+            std::cout << "my_max_idx + 1 > max_dimension! ---  " << my_max_idx << " + 1 > " << max_dimension << ". Uh-oh\n";
+            return bools_t_2d();
+        }
+        map[coords.first][coords.second] = true;
+    }
+
+    //Remove unused parts of the map
+    min_dimension_display = std::max(min_dimension_display, my_max_idx + 1);
+    map = bools_t_2d(map.begin(), map.begin() + min_dimension_display);
+    for (auto& line : map)
+        line = bools_t(line.begin(), line.begin() + min_dimension_display);
+    return map;
 }
 
 #endif // OTHER_AOC_UTILS_H
