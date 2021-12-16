@@ -101,4 +101,22 @@ size_t steps_between_cells(coords_t cell1, coords_t cell2)
     return out;
 }
 
+template <typename T>
+size_t largest_subvector(std::vector<std::vector<T>> vec_2d)
+{
+    size_t max_size = 0;
+    for (auto vec : vec2d)
+        max_size = vec.size() > max_size ? vec.size() : max_size;
+    return max_size;
+}
+
+template <typename T>
+size_t smallest_subvector(std::vector<std::vector<T>> vec_2d)
+{
+    size_t max_size = SIZE_MAX;
+    for (auto vec : vec2d)
+        max_size = vec.size() < max_size ? vec.size() : max_size;
+    return max_size;
+}
+
 #endif // OTHER_AOC_UTILS_H
