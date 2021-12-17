@@ -13,5 +13,6 @@
 #include <aoc_typedefs.h>
 #include <other_aoc_utils.h>
 #include <string_parser.h>
+#include <bin_str.h>
 
 #endif // ADVENT_OF_CODE_H
