@@ -2,7 +2,11 @@
 
 ints_t_2d parse(strings_t input)
 {
-    ints_t_2d out;
+    ints_t_2d out;// = strings_of_digits_to_ints(input);
+    for (auto line : input)
+    {
+        // for (auto my_char : line) {}
+    }
     return out;
 }
 
@@ -20,22 +24,30 @@ sll part2(strings_t input)
 
 int main ()
 {
-    std::string day_string = "14";
+    std::string day_string = "18";
+    std::cout << "Day " << day_string << std::endl;
     strings_t test_data = get_strings_from_file("../inputs/day" + day_string + "_test.txt");
     strings_t real_data = get_strings_from_file("../inputs/day" + day_string + ".txt");
-    std::cout << "Day " << day_string << std::endl;
+    ints_t_2d test      = parse(get_strings_from_file("../inputs/day" + day_string + "_test.txt"));
+    ints_t_2d real      = parse(get_strings_from_file("../inputs/day" + day_string + ".txt"));
 
-
+    std::cout << "\nPart 1\n\n";
     sll results_test_1 = part1(test_data);
-    sll results_real_1 = part1(real_data);
     sll expected_test_result_1 = 0;
+    if (results(results_test_1, expected_test_result_1))
+    {
+        sll results_real_1 = part1(real_data);
+        std::cout << "Real result is " << results_real_1 << std::endl;
+    }
 
+    std::cout << "\nPart 2\n\n";
     sll results_test_2 = part2(test_data);
-    sll results_real_2 = part2(real_data);
     sll expected_test_result_2 = 0;
-
-    results(results_test_1, expected_test_result_1, results_real_1);
-    results(results_test_2, expected_test_result_2, results_real_2);
+    if (results(results_test_2, expected_test_result_2))
+    {
+        sll results_real_2 = part2(real_data);
+        std::cout << "Real result is " << results_real_2 << "\n\nFinished" << std::endl;
+    }
 
     return 0;
 }
