@@ -75,7 +75,7 @@ template <typename T>
 bool results(T result, T expected_result)
 {
     std::cout << "Test result is " << result;
-    if (result == expected_result) { std::cout << ". Passed!\nNow running the real input\n";          return true;  }
+    if (result == expected_result) { std::cout << ". Passed!\n";                                       return true;  }
     else                           { std::cout << ". Failed. Looking for " << expected_result << "\n"; return false; }
 }
 
