@@ -17,8 +17,10 @@ bools_t_2d coords_to_bools(coords_t_vec path, size_t max_dimension = 1001, size_
 // Get the number of non-diagonal steps between two coordinates
 size_t steps_between_cells(coords_t cell1, coords_t cell2);
 
+bools_t_2d parse_pounds_and_decimals(strings_t strs);
+
 // Sum of first n integers
-ull sum_of_first_n_integers(ull n) { return (n * (n + 1)) / 2; }
+inline ull sum_of_first_n_integers(ull n) { return (n * (n + 1)) / 2; }
 
 template <typename T>
 void print_T_2d(T output, bool with_comma = false, bool null_is_space = false)

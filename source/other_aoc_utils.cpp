@@ -60,3 +60,23 @@ size_t steps_between_cells(coords_t cell1, coords_t cell2)
     size_t out = first_steps + second_steps;
     return out;
 }
+
+bools_t_2d parse_pounds_and_decimals(strings_t strs)
+{
+    bools_t_2d out;
+    for (auto str : strs)
+    {
+        std::vector<bool> out_line;
+        for (auto my_char : str)
+        {
+            if (my_char == '.')
+                out_line.push_back(false);
+            else if (my_char == '#')
+                out_line.push_back(true);
+            else
+                std::cout << "BAD INPUT!";
+        }
+        out.push_back(out_line);
+    }
+    return out;
+}
