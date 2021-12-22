@@ -47,6 +47,15 @@ std::string print_T_2d_to_string(T output, bool with_comma = false, bool null_is
 
 
 template <typename T>
+void save_T_2d_to_file(T output, std::string filename, bool with_comma = false, bool null_is_space = false)
+{
+    std::ofstream outfile;
+    outfile.open(filename);
+    std::string str = print_T_2d_to_string(output, with_comma, null_is_space);
+    outfile.close();
+}
+
+template <typename T>
 size_t largest_subvector(std::vector<std::vector<T>> vec_2d)
 {
     size_t max_size = 0;
