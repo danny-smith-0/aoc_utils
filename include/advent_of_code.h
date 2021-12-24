@@ -10,6 +10,9 @@
 #include <map>
 #include <algorithm> //sort
 
+#include <chrono> // steady clock
+using namespace std::chrono;
+
 #include <aoc_typedefs.h>
 #include <other_aoc_utils.h>
 #include <string_parser.h>
