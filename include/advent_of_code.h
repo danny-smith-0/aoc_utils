@@ -9,6 +9,7 @@
 #include <array>
 #include <map>
 #include <algorithm> //sort
+#include <math.h> // trunc
 
 #include <chrono> // steady clock
 using namespace std::chrono;
