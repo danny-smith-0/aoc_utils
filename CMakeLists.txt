@@ -11,3 +11,8 @@ target_include_directories ( aoc_utils
     PUBLIC
     include
 )
+
+target_compile_features( aoc_utils
+    PRIVATE
+    cxx_std_17
+)
