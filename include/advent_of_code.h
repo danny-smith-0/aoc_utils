@@ -20,4 +20,6 @@ using namespace std::chrono;
 #include <string_parser.h>
 #include <bin_str.h>
 
+#include <dijkstras_shortest_path.h>
+
 #endif // ADVENT_OF_CODE_H
