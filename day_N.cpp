@@ -26,10 +26,10 @@ int main ()
 {
     std::string day_string = "01";
     std::cout << "Day " << day_string << std::endl;
-    strings_t test_data = get_strings_from_file("../inputs/day_" + day_string + "_test_input.txt");
-    strings_t real_data = get_strings_from_file("../inputs/day_" + day_string + "_input.txt");
-    ints_t_2d test      = parse(get_strings_from_file("../inputs/day_" + day_string + "_test_input.txt"));
-    ints_t_2d real      = parse(get_strings_from_file("../inputs/day_" + day_string + "_input.txt"));
+    strings_t test_data = get_strings_from_file("../puzzle_inputs/day_" + day_string + "_test_input.txt");
+    strings_t real_data = get_strings_from_file("../puzzle_inputs/day_" + day_string + "_input.txt");
+    ints_t_2d test_data_parsed = parse(test_data);
+    ints_t_2d real_data_parsed = parse(real_data);
 
     std::cout << "\nPart 1\n\n";
     sll results_test_1 = part1(test_data);
