@@ -16,4 +16,6 @@ ints_t_2d strings_of_digits_to_ints(strings_t const& input);
 
 bool compare_sorted_strings(std::string str1, std::string str2);
 
+void unique_sorted_string(std::string& input_str);
+
 #endif // STRING_PARSER_H
