@@ -4,6 +4,9 @@
 #include <fstream>  // std::ifstream
 #include <algorithm> // sort
 
+namespace aoc
+{
+
 strings_t get_strings_from_file(const std::string& file_path)
 {
     strings_t strings;
@@ -94,3 +97,5 @@ void unique_sorted_string(std::string& input_str)
     auto last = std::unique(input_str.begin(), input_str.end());
     input_str.erase(last, input_str.end());
 }
+
+}  // namespace aoc

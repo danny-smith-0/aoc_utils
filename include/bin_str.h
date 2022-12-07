@@ -4,8 +4,10 @@
 #include <aoc_typedefs.h>
 #include <string>
 
-ull binstring_to_value(std::string binstr);
-
-std::string hexchar_to_binstring(char hexchar);
+namespace aoc
+{
+    ull binstring_to_value(std::string binstr);
+    std::string hexchar_to_binstring(char hexchar);
+}
 
 #endif
