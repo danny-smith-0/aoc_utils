@@ -1,5 +1,9 @@
 #include <other_aoc_utils.h>
 
+
+namespace aoc
+{
+
 // Replicate the matlab colon 2:5 ==> {2,3,4,5} and 6:4 ==> {6,5,4}
 ints_t matlab_colon(int first, int last)
 {
@@ -80,3 +84,5 @@ bools_t_2d parse_pounds_and_decimals(strings_t strs)
     }
     return out;
 }
+
+}  // namespace aoc

@@ -1,6 +1,9 @@
 #include <bin_str.h>
 #include <cmath> //pow
 
+namespace aoc
+{
+
 ull binstring_to_value(std::string binstr)
 {
     ull value = 0;
@@ -34,3 +37,5 @@ std::string hexchar_to_binstring(char hexchar)
     }
     return "";
 }
+
+}  // namespace aoc
