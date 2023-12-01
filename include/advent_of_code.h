@@ -11,6 +11,7 @@
 #include <algorithm> //sort
 #include <math.h> // trunc
 #include <optional>
+#include <regex>
 
 #include <chrono> // steady clock
 using namespace std::chrono;
