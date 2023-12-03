@@ -7,9 +7,9 @@ namespace aoc
 {
     strings_t get_strings_from_file(const std::string& file_path);
 
-    bool find_space_in_string(std::string const& str_in, size_t* index);
-    std::string string_before_space(std::string const& string_in, size_t space_index);
-    std::string string_after_space(std::string const& string_in, size_t space_index);
+    bool find_delimeter_in_string(std::string const& str_in, size_t* index_out, std::string const& delimeter = " ");  // Used to be find_space_in_string
+    std::string string_before_delimeter(std::string const& string_in, size_t delimeter_index = SIZE_MAX);  // Use to be string_before_space
+    std::string string_after_delimeter(std::string const& string_in, size_t delimeter_index = SIZE_MAX);  // Use to be string_after_space
 
     ints_t    substrings_to_ints(std::string const& string, std::string const& delimeter);
     strings_t substrings_to_strings(std::string const& string, std::string const& delimeter);

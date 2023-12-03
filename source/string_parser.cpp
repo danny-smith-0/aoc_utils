@@ -18,25 +18,28 @@ strings_t get_strings_from_file(const std::string& file_path)
 }
 
 
-bool find_space_in_string(std::string const& str_in, size_t* index)
+bool find_delimeter_in_string(std::string const& str_in, size_t* index_out, std::string const& delimeter)
 {
-    size_t found = str_in.find(" ");
+    size_t found = str_in.find(delimeter);
     if(found != std::string::npos)
     {
-        *index = found;
+        *index_out = found;
         return true;
     }
     return false;
 }
 
-std::string string_before_space(std::string const& string_in, size_t space_index)
+std::string string_before_delimeter(std::string const& string_in, size_t delimeter_index)
 {
-    return string_in.substr(0, space_index);
+    // If no index specified find it. NOTE: Assumes the delimeter was a space.
+    if (delimeter_index == SIZE_MAX)
+        find_delimeter_in_string(string_in, &delimeter_index, " ");
+    return string_in.substr(0, delimeter_index);
 }
 
-std::string string_after_space(std::string const& string_in, size_t space_index)
+std::string string_after_delimeter(std::string const& string_in, size_t delimeter_index)
 {
-    return string_in.substr(space_index + 1, string_in.size() - 1);
+    return string_in.substr(delimeter_index + 1, string_in.size() - 1);
 }
 
 std::vector<int> substrings_to_ints(std::string const& string, std::string const& delimeter)
